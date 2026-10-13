@@ -1,0 +1,125 @@
+[
+  {
+    "id": "resume-job-matcher",
+    "title": "Resume–Job Matcher",
+    "status": "done",
+    "summary": "A Flask app that scores how well a resume matches a job description and explains what's missing.",
+    "highlights": [
+      "Score combines skill coverage (~100 skills and their spellings) with text similarity from scikit-learn",
+      "Lists missing skills, job terms the resume never mentions and what to fix first; safe PDF parsing",
+      "21 unit and API tests plus Playwright end-to-end tests on desktop and mobile; Docker image"
+    ],
+    "tags": [
+      "Python",
+      "AI",
+      "Testing"
+    ],
+    "stack": [
+      "Python",
+      "Flask",
+      "scikit-learn",
+      "pdfplumber",
+      "Playwright",
+      "Docker"
+    ],
+    "repo": "https://github.com/pallavipatil1111/resume-job-matcher",
+    "demo": ""
+  },
+  {
+    "id": "library-db",
+    "title": "Library Management Database",
+    "status": "done",
+    "summary": "A MySQL library system where stored procedures handle lending and returns, and triggers keep copy status and fines correct.",
+    "highlights": [
+      "3NF schema with CHECK, UNIQUE and foreign-key constraints; borrowing rules stored as data",
+      "15 months of history (2,200+ loans) replayed through the procedures; views for overdue books and member summaries",
+      "15 automated tests run on MySQL 8 in GitHub Actions"
+    ],
+    "tags": [
+      "SQL",
+      "Testing"
+    ],
+    "stack": [
+      "MySQL",
+      "Stored Procedures",
+      "Triggers",
+      "Views",
+      "Python",
+      "GitHub Actions"
+    ],
+    "repo": "https://github.com/pallavipatil1111/library-management-db",
+    "demo": ""
+  },
+  {
+    "id": "retail-sales-sql",
+    "title": "Retail Sales SQL Analysis",
+    "status": "done",
+    "summary": "A MySQL star-schema database for a 12-store retail chain, with 20 business questions answered in SQL and the findings charted.",
+    "highlights": [
+      "CTEs and window functions (RANK, LAG, NTILE, moving averages) for growth, cohorts and RFM segments",
+      "Found that 20%+ discounts lose money on electronics and grocery, and that 26% of customers drive 54% of revenue",
+      "Every push rebuilds the database and runs all queries on MySQL 8 in GitHub Actions"
+    ],
+    "tags": [
+      "SQL"
+    ],
+    "stack": [
+      "MySQL",
+      "SQL",
+      "Python",
+      "GitHub Actions"
+    ],
+    "repo": "https://github.com/pallavipatil1111/retail-sales-sql-analysis",
+    "demo": ""
+  },
+  {
+    "id": "weather-aqi",
+    "title": "Weather & Air-Quality Dashboard",
+    "status": "done",
+    "summary": "Live weather, a 5-day forecast and air quality on the Indian AQI scale for any city in India.",
+    "highlights": [
+      "Converts PM2.5 and PM10 to India's AQI using CPCB breakpoints, with the official colour scale",
+      "City search with suggestions, geolocation, °C/°F and saved cities; hand-drawn SVG chart",
+      "Unit tests with Node's test runner and Playwright tests with the API mocked"
+    ],
+    "tags": [
+      "JavaScript",
+      "Testing"
+    ],
+    "stack": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "OpenWeatherMap API",
+      "Playwright"
+    ],
+    "repo": "https://github.com/pallavipatil1111/weather-aqi-dashboard",
+    "demo": "https://pallavipatil1111.github.io/weather-aqi-dashboard/"
+  },
+  {
+    "id": "servisto",
+    "title": "Servisto",
+    "status": "done",
+    "summary": "A local service-provider marketplace where customers search for services and book providers.",
+    "highlights": [
+      "Role-based authentication and session handling, with separate views for each role",
+      "Booking management with live status tracking and provider ratings",
+      "End-to-end tests written in Playwright"
+    ],
+    "tags": [
+      "Python",
+      "Testing"
+    ],
+    "stack": [
+      "Python",
+      "Flask",
+      "SQLite",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Playwright"
+    ],
+    "repo": "",
+    "demo": ""
+  }
+]

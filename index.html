@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pallavi Patil – Software Developer</title>
+  <meta name="description" content="Pallavi Patil, B.Tech CSE 2026. Software developer working in Java, Python and SQL, with end-to-end testing in Playwright and Cypress. Open to roles in Pune, Hyderabad and remote.">
+  <meta property="og:title" content="Pallavi Patil – Software Developer">
+  <meta property="og:description" content="Java, Python and SQL developer with Playwright and Cypress test automation. Open to fresher roles.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    // Apply the saved theme before first paint to avoid a flash
+    try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="nav-name" href="#top">Pallavi Patil</a>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1.5 12h3M19.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-intro">
+        <h1 id="hero-title">Pallavi Patil</h1>
+        <p class="hero-role">Software developer building in Python, SQL and Java, and testing it end to end with Playwright and Cypress.</p>
+        <p class="hero-meta">B.Tech Computer Science, 2026 · Pune · Open to roles in Pune, Hyderabad and remote</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="assets/Pallavi_Patil_Resume.pdf" download>Download resume</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+        <ul class="social">
+          <li><a href="https://github.com/pallavipatil1111" rel="noopener" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/pallavi-patil-6baa13253" rel="noopener" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <figure class="report" aria-label="Summary of skills, written as a test report">
+        <div class="report-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="report-title">terminal</span></div>
+        <pre class="report-body"><code><span class="prompt">$</span> npx playwright test pallavi.spec.ts
+<span class="muted">Running 6 tests using 1 worker</span>
+
+<span class="pass">✓</span> scores resumes with scikit-learn     <span class="muted">Resume Matcher</span>
+<span class="pass">✓</span> procedures and triggers in MySQL     <span class="muted">Library DB</span>
+<span class="pass">✓</span> business answers in SQL              <span class="muted">Retail Sales</span>
+<span class="pass">✓</span> Flask apps with role-based login     <span class="muted">Servisto</span>
+<span class="pass">✓</span> end-to-end tests: Playwright, Cypress
+<span class="pass">✓</span> CI pipelines in GitHub Actions
+
+<span class="pass">6 passed</span> <span class="muted">(B.Tech CSE, 2026)</span></code></pre>
+      </figure>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <h2 id="projects-title">Projects</h2>
+        <div class="filters" role="group" aria-label="Filter projects by technology">
+          <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="chip" data-filter="Python" aria-pressed="false">Python</button>
+          <button type="button" class="chip" data-filter="SQL" aria-pressed="false">SQL</button>
+          <button type="button" class="chip" data-filter="JavaScript" aria-pressed="false">JavaScript</button>
+          <button type="button" class="chip" data-filter="Testing" aria-pressed="false">Testing</button>
+        </div>
+      </div>
+      <ol class="project-list" id="project-list" aria-live="polite"></ol>
+      <p class="empty" id="project-empty" hidden>No projects match this filter yet.</p>
+      <noscript><p>Turn on JavaScript to see the projects, or visit <a href="https://github.com/pallavipatil1111">my GitHub</a>.</p></noscript>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <dl class="skills">
+        <div><dt>Languages</dt><dd>Java, Python, SQL, JavaScript, TypeScript (tests)</dd></div>
+        <div><dt>Backend</dt><dd>Flask, Spring Boot, REST APIs, JDBC</dd></div>
+        <div><dt>Frontend</dt><dd>HTML, CSS, JavaScript</dd></div>
+        <div><dt>Databases</dt><dd>MySQL, SQLite, database design, stored procedures, triggers, CTEs and window functions</dd></div>
+        <div><dt>Testing</dt><dd>Playwright, Cypress, pytest, end-to-end testing, bug reporting in Jira</dd></div>
+        <div><dt>Tools</dt><dd>Git, GitHub, GitHub Actions, Docker, VS Code, Jupyter Notebook</dd></div><div><dt>Data &amp; ML</dt><dd>scikit-learn, Pandas, TF-IDF and cosine similarity</dd></div>
+      </dl>
+    </section>
+
+    <section class="section two-col" id="education" aria-labelledby="education-title">
+      <div>
+        <h2 id="education-title">Education</h2>
+        <div class="entry">
+          <h3>B.Tech, Computer Science &amp; Engineering</h3>
+          <p>Ajeenkya D Y Patil University, Pune · 2022–2026 · CGPA 7.92</p>
+        </div>
+      </div>
+      <div>
+        <h2>Training</h2>
+        <div class="entry">
+          <h3>Google AI-ML Virtual Internship</h3>
+          <p>AICTE-Eduskill · Machine learning models with TensorFlow and Google Cloud</p>
+        </div>
+        <div class="entry">
+          <h3>Google Android Developer Virtual Internship</h3>
+          <p>AICTE-Eduskill · UI design, APIs and the app lifecycle</p>
+        </div>
+        <div class="entry">
+          <h3>IBM Data Analytics Fluency Pathway</h3>
+          <p>Data preparation, visualisation and statistics</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p class="lead">I'm looking for fresher roles in software development, backend or test automation. The quickest way to reach me is email.</p>
+      <div class="email-row">
+        <a class="email" id="email-link" href="mailto:pallavipatil5304@gmail.com">pallavipatil5304@gmail.com</a>
+        <button type="button" class="btn btn-small" id="copy-email">Copy email</button>
+        <span class="copy-status" id="copy-status" role="status"></span>
+      </div>
+
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="field">
+          <label for="cf-name">Your name</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required>
+          <p class="error" id="cf-name-error"></p>
+        </div>
+        <div class="field">
+          <label for="cf-email">Your email</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required>
+          <p class="error" id="cf-email-error"></p>
+        </div>
+        <div class="field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
+          <p class="error" id="cf-message-error"></p>
+        </div>
+        <button type="submit" class="btn btn-primary">Open in my email app</button>
+        <p class="form-note">This opens your email app with the message filled in. Nothing is stored on this site.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built with HTML, CSS and JavaScript, tested with Playwright. <a href="https://github.com/pallavipatil1111/pallavipatil1111.github.io" rel="noopener" target="_blank">View the source</a>.</p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
