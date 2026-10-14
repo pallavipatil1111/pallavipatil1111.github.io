@@ -1,4 +1,9 @@
 import { test, expect } from "@playwright/test";
+import { readFileSync } from "node:fs";
+
+type Project = { id: string; title: string; tags: string[]; repo: string; demo: string };
+const data: Project[] = JSON.parse(readFileSync("data/projects.json", "utf8"));
+const count = (tag: string) => data.filter((p) => p.tags.includes(tag)).length;
 
 test.beforeEach(async ({ page }) => {
   await page.goto("/");
@@ -11,24 +16,25 @@ test("shows name, role and page title", async ({ page }) => {
 });
 
 test("loads every project from projects.json", async ({ page }) => {
-  const projects = page.locator(".project");
-  await expect(projects).toHaveCount(5);
-  await expect(page.getByTestId("project-retail-sales-sql")).toContainText("Retail Sales SQL Analysis");
+  await expect(page.locator(".project")).toHaveCount(data.length);
+  expect(data.length).toBeGreaterThanOrEqual(12);
+  for (const p of data) {
+    const card = page.getByTestId(`project-${p.id}`);
+    await expect(card).toContainText(p.title);
+    await expect(card.getByRole("link", { name: "GitHub" })).toHaveAttribute("href", p.repo);
+  }
+  await expect(page.getByTestId("project-weather-aqi").getByRole("link", { name: "Live demo" })).toBeVisible();
 });
 
 test("filters projects by technology", async ({ page }) => {
-  await page.getByRole("button", { name: "SQL", exact: true }).click();
-  await expect(page.locator(".project")).toHaveCount(2);
-  await expect(page.getByRole("button", { name: "SQL", exact: true })).toHaveAttribute("aria-pressed", "true");
-
-  await page.getByRole("button", { name: "JavaScript" }).click();
-  await expect(page.locator(".project")).toHaveCount(1);
-
-  await page.getByRole("button", { name: "Testing" }).click();
-  await expect(page.locator(".project")).toHaveCount(4);
-
+  for (const tag of ["Java", "Python", "AI", "SQL", "JavaScript"]) {
+    await page.getByRole("button", { name: tag, exact: true }).click();
+    await expect(page.locator(".project")).toHaveCount(count(tag));
+    await expect(page.getByRole("button", { name: tag, exact: true })).toHaveAttribute("aria-pressed", "true");
+  }
+  await expect(page.getByTestId("project-buchhaus-microservices")).toHaveCount(0); // JavaScript filter is active
   await page.getByRole("button", { name: "All" }).click();
-  await expect(page.locator(".project")).toHaveCount(5);
+  await expect(page.locator(".project")).toHaveCount(data.length);
 });
 
 test("theme toggle switches theme and remembers it after reload", async ({ page }) => {

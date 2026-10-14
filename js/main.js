@@ -37,7 +37,7 @@ function renderProjects(filter = "all") {
     const left = el("div");
     left.append(el("h3", {}, p.title));
     const links = el("div", { class: "project-links" });
-    if (p.repo) links.append(el("a", { href: p.repo, target: "_blank", rel: "noopener" }, "Code"));
+    if (p.repo) links.append(el("a", { href: p.repo, target: "_blank", rel: "noopener" }, "GitHub"));
     if (p.demo) links.append(el("a", { href: p.demo, target: "_blank", rel: "noopener" }, "Live demo"));
     if (links.children.length) left.append(links);
 

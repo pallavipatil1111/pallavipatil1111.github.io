@@ -1,5 +1,196 @@
 [
   {
+    "id": "buchhaus-microservices",
+    "title": "BuchHaus Microservices",
+    "status": "done",
+    "summary": "The BuchHaus bookstore split into independent Spring Boot services behind an API gateway, each with its own database.",
+    "highlights": [
+      "Spring Cloud Gateway checks JWTs and routes requests; services find each other through Eureka",
+      "Checkout is a saga across two services: reserve stock, save the order, confirm, with compensation if a step fails",
+      "OpenFeign calls wrapped in Resilience4j retry and circuit breaker; a CI test stops a service mid-run and checks recovery",
+      "55 JUnit tests (H2 and MySQL) and 8 Playwright tests against the full Docker Compose stack"
+    ],
+    "tags": [
+      "Java",
+      "SQL",
+      "Testing"
+    ],
+    "stack": [
+      "Java 21",
+      "Spring Boot 3",
+      "Spring Cloud",
+      "Resilience4j",
+      "MySQL",
+      "Docker Compose",
+      "Playwright"
+    ],
+    "repo": "https://github.com/pallavipatil1111/buchhaus-microservices",
+    "demo": ""
+  },
+  {
+    "id": "documind-rag",
+    "title": "DocuMind: RAG Document Q&A",
+    "status": "done",
+    "summary": "Upload PDFs, ask questions in plain English and get answers grounded in the documents, with page-level citations.",
+    "highlights": [
+      "LangChain ingestion and chunking, OpenAI embeddings stored in Pinecone, answers streamed over server-sent events",
+      "Pluggable providers (Claude or OpenAI, Pinecone or in-memory) and an offline mode, so tests run without API keys",
+      "Retrieval evaluation (hit rate, MRR, precision@k) used to tune chunking and the similarity threshold",
+      "FastAPI back end and Next.js + Tailwind front end; pytest and TypeScript tests, Docker, GitHub Actions"
+    ],
+    "tags": [
+      "Python",
+      "AI",
+      "JavaScript",
+      "Testing"
+    ],
+    "stack": [
+      "Python",
+      "FastAPI",
+      "LangChain",
+      "Pinecone",
+      "OpenAI",
+      "Next.js",
+      "TypeScript",
+      "Docker"
+    ],
+    "repo": "https://github.com/pallavipatil1111/documind-rag",
+    "demo": ""
+  },
+  {
+    "id": "buchhaus",
+    "title": "BuchHaus: Online Bookstore",
+    "status": "done",
+    "summary": "A full-stack bookstore: browse and search the catalogue, keep a cart, check out, and manage orders as an admin.",
+    "highlights": [
+      "Spring Security with JWT and customer/admin roles; Flyway migrations on MySQL 8",
+      "Row-level locks at checkout, so the last copy of a book can only ever be sold once",
+      "41 JUnit tests (unit, Mockito, MockMvc) and 14 Cypress end-to-end tests run against H2, MySQL and the packaged jar"
+    ],
+    "tags": [
+      "Java",
+      "SQL",
+      "JavaScript",
+      "Testing"
+    ],
+    "stack": [
+      "Java 21",
+      "Spring Boot 3",
+      "Spring Security",
+      "JPA",
+      "MySQL",
+      "Cypress"
+    ],
+    "repo": "https://github.com/pallavipatil1111/buchhaus",
+    "demo": ""
+  },
+  {
+    "id": "campus-lost-found",
+    "title": "Campus Lost & Found",
+    "status": "done",
+    "summary": "Students post lost and found items with a photo; every new post is matched against the other side by image and text similarity.",
+    "highlights": [
+      "CLIP (ViT-B/32) image and text embeddings with a Pinecone vector index, and an offline embedder for tests",
+      "Ownership requests: contact details are shared only after the finder accepts",
+      "Precision@k / recall@k / MRR evaluation as a CI quality gate; 35 pytest and 10 Playwright tests; Docker"
+    ],
+    "tags": [
+      "Python",
+      "AI",
+      "Testing"
+    ],
+    "stack": [
+      "Python",
+      "Flask",
+      "CLIP",
+      "Pinecone",
+      "NumPy",
+      "Pillow",
+      "SQLite",
+      "Playwright"
+    ],
+    "repo": "https://github.com/pallavipatil1111/campus-lost-found",
+    "demo": ""
+  },
+  {
+    "id": "servisto",
+    "title": "Servisto: Service Marketplace",
+    "status": "done",
+    "summary": "Book local plumbers, electricians and cleaners: search, pick a time slot, track the booking and review the job.",
+    "highlights": [
+      "Customer and provider roles; bookings move pending → confirmed → completed, enforced on the server",
+      "A partial unique index blocks double booking of a slot; taken slots are greyed out in the form",
+      "CSRF protection for forms and fetch calls; providers can reply to reviews",
+      "55 pytest tests and 6 Playwright browser tests; Docker image tested in GitHub Actions"
+    ],
+    "tags": [
+      "Python",
+      "SQL",
+      "Testing"
+    ],
+    "stack": [
+      "Python",
+      "Flask",
+      "SQLite",
+      "JavaScript",
+      "Tailwind CSS",
+      "Playwright",
+      "Docker"
+    ],
+    "repo": "https://github.com/pallavipatil1111/servisto",
+    "demo": ""
+  },
+  {
+    "id": "mandi-price-tracker",
+    "title": "Mandi Price Tracker",
+    "status": "done",
+    "summary": "Daily crop prices from Maharashtra's APMC markets, imported from the government's open data API, with trends and price alerts.",
+    "highlights": [
+      "Scheduled imports from data.gov.in (Agmarknet), cleaned and stored in MySQL",
+      "Trends, market comparisons and seasonality in hand-built SVG charts; watchlist and alerts for signed-in users",
+      "67 JUnit tests (including a local server standing in for the API) and 12 Playwright tests"
+    ],
+    "tags": [
+      "Java",
+      "SQL",
+      "JavaScript",
+      "Testing"
+    ],
+    "stack": [
+      "Java 21",
+      "Spring Boot 3",
+      "MySQL",
+      "Java HttpClient",
+      "SVG",
+      "Playwright"
+    ],
+    "repo": "https://github.com/pallavipatil1111/mandi-price-tracker",
+    "demo": ""
+  },
+  {
+    "id": "retail-sales-sql",
+    "title": "Retail Sales SQL Analysis",
+    "status": "done",
+    "summary": "A MySQL star-schema database for a 12-store retail chain, with 20 business questions answered in SQL and the findings charted.",
+    "highlights": [
+      "CTEs and window functions (RANK, LAG, NTILE, moving averages) for growth, cohorts and RFM segments",
+      "Found that 20%+ discounts lose money on electronics and grocery, and that 26% of customers drive 54% of revenue",
+      "Every push rebuilds the database and runs all queries on MySQL 8 in GitHub Actions"
+    ],
+    "tags": [
+      "SQL",
+      "Python"
+    ],
+    "stack": [
+      "MySQL",
+      "SQL",
+      "Python",
+      "GitHub Actions"
+    ],
+    "repo": "https://github.com/pallavipatil1111/retail-sales-sql-analysis",
+    "demo": ""
+  },
+  {
     "id": "resume-job-matcher",
     "title": "Resume–Job Matcher",
     "status": "done",
@@ -23,6 +214,57 @@
       "Docker"
     ],
     "repo": "https://github.com/pallavipatil1111/resume-job-matcher",
+    "demo": ""
+  },
+  {
+    "id": "weather-aqi",
+    "title": "Weather & Air-Quality Dashboard",
+    "status": "done",
+    "summary": "Live weather, a 5-day forecast and air quality on the Indian AQI scale for any city in India.",
+    "highlights": [
+      "Converts PM2.5 and PM10 to India's AQI using CPCB breakpoints, with the official colour scale",
+      "City search with suggestions, geolocation, °C/°F and saved cities; hand-drawn SVG chart",
+      "Unit tests with Node's test runner and Playwright tests with the API mocked"
+    ],
+    "tags": [
+      "JavaScript",
+      "Testing"
+    ],
+    "stack": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "OpenWeatherMap API",
+      "Playwright"
+    ],
+    "repo": "https://github.com/pallavipatil1111/weather-aqi-dashboard",
+    "demo": "https://pallavipatil1111.github.io/weather-aqi-dashboard/"
+  },
+  {
+    "id": "placement-prep-tracker",
+    "title": "Placement Prep Tracker",
+    "status": "done",
+    "summary": "Job applications on a Kanban board, solved DSA problems with a spaced-repetition revision queue, and a progress dashboard.",
+    "highlights": [
+      "SM-2 spaced repetition schedules each problem for revision just before you would forget it",
+      "Dashboard with streaks, an activity heatmap and the hiring funnel with conversion rates",
+      "68 JUnit tests and 13 Playwright tests, run on H2 and MySQL in GitHub Actions"
+    ],
+    "tags": [
+      "Java",
+      "SQL",
+      "JavaScript",
+      "Testing"
+    ],
+    "stack": [
+      "Java 21",
+      "Spring Boot 3",
+      "Spring Security",
+      "MySQL",
+      "JavaScript",
+      "Playwright"
+    ],
+    "repo": "https://github.com/pallavipatil1111/placement-prep-tracker",
     "demo": ""
   },
   {
@@ -51,75 +293,29 @@
     "demo": ""
   },
   {
-    "id": "retail-sales-sql",
-    "title": "Retail Sales SQL Analysis",
+    "id": "smart-expense-splitter",
+    "title": "Smart Expense Splitter",
     "status": "done",
-    "summary": "A MySQL star-schema database for a 12-store retail chain, with 20 business questions answered in SQL and the findings charted.",
+    "summary": "Split group bills equally, by amounts, percentages or shares, and settle up in the fewest possible payments.",
     "highlights": [
-      "CTEs and window functions (RANK, LAG, NTILE, moving averages) for growth, cohorts and RFM segments",
-      "Found that 20%+ discounts lose money on electronics and grocery, and that 26% of customers drive 54% of revenue",
-      "Every push rebuilds the database and runs all queries on MySQL 8 in GitHub Actions"
+      "Settlement algorithm checked against brute force on 400 random groups",
+      "Balances exact to the paisa; JWT login and group membership checks",
+      "60 JUnit tests and 11 Playwright tests, run on H2 and MySQL 8 in GitHub Actions"
     ],
     "tags": [
-      "SQL"
-    ],
-    "stack": [
-      "MySQL",
+      "Java",
       "SQL",
-      "Python",
-      "GitHub Actions"
-    ],
-    "repo": "https://github.com/pallavipatil1111/retail-sales-sql-analysis",
-    "demo": ""
-  },
-  {
-    "id": "weather-aqi",
-    "title": "Weather & Air-Quality Dashboard",
-    "status": "done",
-    "summary": "Live weather, a 5-day forecast and air quality on the Indian AQI scale for any city in India.",
-    "highlights": [
-      "Converts PM2.5 and PM10 to India's AQI using CPCB breakpoints, with the official colour scale",
-      "City search with suggestions, geolocation, °C/°F and saved cities; hand-drawn SVG chart",
-      "Unit tests with Node's test runner and Playwright tests with the API mocked"
-    ],
-    "tags": [
-      "JavaScript",
       "Testing"
     ],
     "stack": [
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "OpenWeatherMap API",
-      "Playwright"
-    ],
-    "repo": "https://github.com/pallavipatil1111/weather-aqi-dashboard",
-    "demo": "https://pallavipatil1111.github.io/weather-aqi-dashboard/"
-  },
-  {
-    "id": "servisto",
-    "title": "Servisto",
-    "status": "done",
-    "summary": "A local service-provider marketplace where customers search for services and book providers.",
-    "highlights": [
-      "Role-based authentication and session handling, with separate views for each role",
-      "Booking management with live status tracking and provider ratings",
-      "End-to-end tests written in Playwright"
-    ],
-    "tags": [
-      "Python",
-      "Testing"
-    ],
-    "stack": [
-      "Python",
-      "Flask",
-      "SQLite",
-      "HTML",
-      "CSS",
+      "Java 21",
+      "Spring Boot 3",
+      "Spring Security",
+      "MySQL",
       "JavaScript",
       "Playwright"
     ],
-    "repo": "",
+    "repo": "https://github.com/pallavipatil1111/smart-expense-splitter",
     "demo": ""
   }
 ]
